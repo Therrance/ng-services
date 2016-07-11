@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div ng-app="app">
+    <h1>Services</h1>
+
+    <div ng-controller="ListCtrl as list">
+        <p ng-repeat="message in list.messages">
+            {{ message.id }}: {{ message.text }}
+        </p>
+    </div>
+
+    <div ng-controller="PostCtrl as post">
+        <form ng-submit="post.addMessage(post.newMessage)">
+            <input type="text" ng-model="post.newMessage">
+            <button type="submit">Add message</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
